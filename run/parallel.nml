@@ -1,0 +1,12 @@
+&PARALLEL_PARAMS
+ test_partition = .false.     ! test partition on 1 core
+ test_numprocs = 100          ! if test_partition true, number of "cores"
+ iter_partition = 15          ! partition optimization iters
+ partition_hard = .true.      ! optimization recommended for many cores
+ hilbert = .true.             ! true = use hilbert balancing, false = 1 block per core
+ nblocks_x = 128,              ! num blocks along each direction, power of 2. more blocks -> better balancing and more complex subdomains
+ nblocks_y = 128,
+ gcx = 2,                     ! maximum demanded boundary width exchange
+ gcy = 2,
+ weight_3d = 101.0,           ! 0. = hilbert2d, 101.1 = hilbert3d, 3. = hilbert2d3d
+/
